@@ -4,7 +4,9 @@ import SectionTitle from '../../components/layout/SectionTitle'
 
 const UseRef = (props) => {
     const [value1, setValue1] = useState("")
-    const count = useRef()
+    const count = useRef(0)
+
+    count.current = count.current + 1
     return (
         <div className="UseRef">
             <PageTitle
@@ -17,7 +19,7 @@ const UseRef = (props) => {
                     <div>
                         <span className="text">Valor: </span>
                         <span className="text">{value1} [</span>
-                        <span className="text red">contador</span>
+                        <span className="text red">{count.current}</span>
                         <span className="text">]</span>
                     </div>
                     
